@@ -2,40 +2,35 @@ package com.juaracoding.testing;
 
 public class App {
     public static void main(String[] args) {
+        // Array 2 dimensi
+        // di awal kita belajar array 1 dimensi
+        // dimana item di dalamnya itu nilainya single,
+        // nah, kalo di dalam array 2 dimensi, nilai array
+        // tersebut itu juga array
 
-        String[] daftarMenuMakanan = {
-                "Sashimi",
-                "Mie Ayam",
-                "Bakso",
-                "Ice Cream Vanila",
-                "Jus Mangga"
+        int[][] myArray = {
+                // 0 1
+                { 1, 2 }, // 0
+                { 3, 4 }, // 1
+                { 5, 6 }, // 2
+                { 7, 8 } // 3
         };
 
-        // for (int i = 0; i < daftarMenuMakanan.length; i++) {
-        // System.out.println("Nilai index ke " + i + " adalah = " +
-        // daftarMenuMakanan[i]);
-        // }
+        // System.out.println(myArray[0][1]);
+        // System.out.println(myArray[2][0]);
 
-        // for (String makanan : daftarMenuMakanan) {
-        // System.out.println(makanan);
-        // }
-
-        // Menghitung total dari subtotal
-        // ==============================
-        int[] subtotal = {
-                10_000,
-                230_000,
-                123_500,
-                15_342,
-        };
-
-        int total = 0;
-
-        for (int itemSubtotal : subtotal) {
-            total = total + itemSubtotal;
+        // looping array 2 dimensi cara 1
+        for (int baris = 0; baris < myArray.length; baris++) {
+            for (int kolom = 0; kolom < myArray[baris].length; kolom++) {
+                System.out.println(myArray[baris][kolom]);
+            }
         }
 
-        System.out.println("Total belanja = Rp. " + total);
-
+        // Looping array 2 dimensi cara 2
+        for (int[] arrayBaris : myArray) {
+            for (int nilai : arrayBaris) {
+                System.out.println(nilai);
+            }
+        }
     }
 }
