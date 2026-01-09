@@ -3,48 +3,38 @@ package com.juaracoding.testing;
 import java.util.Arrays;
 
 public class App {
-    public static void main(String... args) {
+    public static void main(String[] args) {
+        Person igy = new Person();
+        Person gina = new Person();
+        Person nanda = new Person();
+        Person bella = new Person();
+        Person jeremy = new Person();
+        Person didi = new Person();
 
-        System.out.println("contoh args ke 0 " + args[0]);
+        /**
+         * Karena kita mendefinisikan properti nama dan usia di kelas Person,
+         * properti tersebut akan tersedia di semua objek kelas Person.
+         * Artinya, Anda dapat menetapkan nilai ke atau membaca nilai dari field name
+         * dan age pada objek kelas Person.
+         */
 
-        // syarat discount >= x
-        Object[][] discounts = {
-                { "Product 01", 10000, 2 },
-                { "Product 03", 5000, 3 },
-        };
+        igy.name = "Fiergyano";
+        igy.age = 17;
 
-        Object[][] carts = {
-                { "Product 01", 20000, 2, 0 }, // 20000 * 2 = 40000 - 10000 = 30000
-                { "Product 02", 15000, 5, 0 }, // 15000 * 5 = 75000
-                { "Product 03", 25000, 1, 0 }, // 25000 * 1 = 25000
-        };
+        gina.name = "Agina Permata";
+        gina.age = 17;
 
-        int total = 0;
+        // System.out.printf("Namaku %s, aku berumur %d tahun\n", igy.name, igy.age);
+        // System.out.println("Nama igy = " + igy.name);
+        // System.out.println("Umur igy = " + igy.age);
 
-        for (int baris = 0; baris < carts.length; baris++) {
-            int discountPrice = 0;
-            // check discount/potongan harga
-            for (Object[] discount : discounts) {
-                String productName = (String) carts[baris][0];
-                if (productName.equals(discount[0])) {
-                    // discountPrice = discount[????]
-                }
-            }
+        igy.sayHi();
 
-            int price = (int) carts[baris][1];
-            int qty = (int) carts[baris][2];
+        // System.out.printf("Namaku %s, aku berumur %d tahun\n", gina.name, gina.age);
+        // System.out.println("Nama Gina = " + gina.name);
+        // System.out.println("Umur Gina = " + gina.age);
 
-            int subtotal = price * qty;
+        gina.sayHi();
 
-            carts[baris][3] = subtotal;
-            total = total + subtotal;
-        }
-
-        System.out.println("Total belanja sebelum potongan = " + total);
-
-        total = total - Integer.parseInt(args[0]);
-
-        System.out.println("Rincian belanja: " + Arrays.deepToString(carts));
-        System.out.println("Total belanja sesudah potongan = " + total);
     }
 }
