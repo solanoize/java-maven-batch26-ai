@@ -5,15 +5,23 @@ package com.juaracoding.testing;
  * properti tersebut akan tersedia "di semua objek kelas Person".
  */
 class Person {
-  String name;
-  int age;
+  private String name;
+  private int age;
 
-  void sayHi() {
-    /**
-     * Perilaku (method) mewakili tindakan yang
-     * dapat dilakukan objek (invoke - dipanggil)
-     * untuk memanipulasi datanya (dia bisa ubah data atau manggil datanya).
-     */
-    System.out.println("Nama saya adalah " + name);
+  public String getName() {
+    return name;
   }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+
 }

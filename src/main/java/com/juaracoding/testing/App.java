@@ -2,39 +2,34 @@ package com.juaracoding.testing;
 
 import java.util.Arrays;
 
+import com.juaracoding.testing.model.Product;
+
 public class App {
     public static void main(String[] args) {
         Person igy = new Person();
-        Person gina = new Person();
-        Person nanda = new Person();
-        Person bella = new Person();
-        Person jeremy = new Person();
-        Person didi = new Person();
+        igy.setName("Igy");
+        igy.setAge(17);
 
-        /**
-         * Karena kita mendefinisikan properti nama dan usia di kelas Person,
-         * properti tersebut akan tersedia di semua objek kelas Person.
-         * Artinya, Anda dapat menetapkan nilai ke atau membaca nilai dari field name
-         * dan age pada objek kelas Person.
-         */
+        String name = igy.getName();
+        int age = igy.getAge();
 
-        igy.name = "Fiergyano";
-        igy.age = 17;
+        System.out.println(name);
+        System.out.println(age);
 
-        gina.name = "Agina Permata";
-        gina.age = 17;
+        Product p1 = new Product();
+        p1.setId(1);
+        p1.setName("Sayur Bayam");
+        p1.setDiscount(20.0);
+        p1.setPrice(30000.00);
+        p1.setStock(2);
 
-        // System.out.printf("Namaku %s, aku berumur %d tahun\n", igy.name, igy.age);
-        // System.out.println("Nama igy = " + igy.name);
-        // System.out.println("Umur igy = " + igy.age);
+        System.out.println("ID = " + p1.getId());
+        System.out.println("Name = " + p1.getName());
 
-        igy.sayHi();
-
-        // System.out.printf("Namaku %s, aku berumur %d tahun\n", gina.name, gina.age);
-        // System.out.println("Nama Gina = " + gina.name);
-        // System.out.println("Umur Gina = " + gina.age);
-
-        gina.sayHi();
-
+        if (p1.isStockAvailable()) {
+            System.out.println("Stock masih aman");
+        } else {
+            System.out.println("Stock sudah dibawah minimum stock");
+        }
     }
 }
