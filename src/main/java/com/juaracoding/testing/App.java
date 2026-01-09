@@ -2,34 +2,29 @@ package com.juaracoding.testing;
 
 import java.util.Arrays;
 
+import com.juaracoding.testing.model.Cart;
 import com.juaracoding.testing.model.Product;
 
 public class App {
     public static void main(String[] args) {
-        Person igy = new Person();
-        igy.setName("Igy");
-        igy.setAge(17);
+        Product[] products = {
+                new Product(1, "Mie Ayam", 15000.00, 0.0, 10),
+                new Product(2, "Es Teh Tawar", 3000.00, 0.0, 100),
+                new Product(3, "Kerupuk Kulit", 5000.00, 0.0, 100),
+        };
 
-        String name = igy.getName();
-        int age = igy.getAge();
+        Cart[] carts = {
+                new Cart(products[0], 2),
+                new Cart(products[1], 3)
+        };
 
-        System.out.println(name);
-        System.out.println(age);
-
-        Product p1 = new Product();
-        p1.setId(1);
-        p1.setName("Sayur Bayam");
-        p1.setDiscount(20.0);
-        p1.setPrice(30000.00);
-        p1.setStock(2);
-
-        System.out.println("ID = " + p1.getId());
-        System.out.println("Name = " + p1.getName());
-
-        if (p1.isStockAvailable()) {
-            System.out.println("Stock masih aman");
-        } else {
-            System.out.println("Stock sudah dibawah minimum stock");
+        double total = 0;
+        System.out.println("======= STRUK MAKAN RESTO UHUY =======");
+        for (Cart cart : carts) {
+            System.out.printf("%s (%d)\t\t %.2f\n", cart.getProduct().getName(), cart.getQty(), cart.getSubtotal());
+            total = total + cart.getSubtotal();
         }
+
+        System.out.printf("Total:\t\t Rp. %.2f\n", total);
     }
 }

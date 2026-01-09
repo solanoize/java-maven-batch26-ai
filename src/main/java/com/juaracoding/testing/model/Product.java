@@ -8,6 +8,14 @@ public class Product {
   private int stock;
   private int limitStock = 5;
 
+  public Product(int id, String name, double price, double discount, int stock) {
+    this.id = id;
+    this.name = name;
+    this.price = price;
+    this.discount = discount;
+    this.stock = stock;
+  }
+
   public int getId() {
     return id;
   }
