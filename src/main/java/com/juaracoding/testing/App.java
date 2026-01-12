@@ -1,18 +1,24 @@
 package com.juaracoding.testing;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 public class App {
     public static void main(String[] args) {
-        HashSet<String> data = new HashSet<>();
+        HashMap<String, String> data = new HashMap<>();
 
-        data.add("gajah");
-        data.add("ayam");
-        data.add("Kerbau");
-        data.add("kerbau");
-        data.add("kerbau");
-        data.add("kerbau");
+        data.put("England", "London");
+        data.put("Indonesia", "Jakarta");
+        data.put("Norway", "Oslo");
+        data.put("US", "Washington DC");
 
         System.out.println(data);
+        System.out.println(data.get("England"));
+        System.out.println(data.values());
+        System.out.println(data.keySet());
+        System.out.println("===========================");
+
+        for (String key : data.keySet()) {
+            System.out.printf("Ibukota %s adalah %s\n", key, data.get(key));
+        }
     }
 }
