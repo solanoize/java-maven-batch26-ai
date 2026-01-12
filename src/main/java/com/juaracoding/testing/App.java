@@ -1,41 +1,40 @@
 package com.juaracoding.testing;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.LinkedList;
 
 public class App {
     public static void main(String[] args) {
-        ArrayList<String> daftarMobil = new ArrayList<>();
-        daftarMobil.add("Volvo"); // index 0
-        daftarMobil.add("BMW"); // index 1
-        daftarMobil.add("Toyota"); // index 2
+        LinkedList<String> daftarWarga = new LinkedList();
 
-        // System.out.println("Isi daftar mobil = " + daftarMobil);
+        daftarWarga.add("Budi");
+        daftarWarga.add("Erni");
+        daftarWarga.add("Salim");
+        daftarWarga.add("Deni");
 
-        // daftarMobil.set(2, "Daihatsu");
+        System.out.println(daftarWarga);
+        System.out.println(daftarWarga.size());
 
-        // System.out.println("Isi daftar mobil yang sudah diubah = " + daftarMobil);
+        daftarWarga.addFirst("Doni");
 
-        // String bmw = daftarMobil.get(1);
+        System.out.println(daftarWarga);
+        System.out.println(daftarWarga.size());
 
-        // System.out.println("Isi nilai index 1 = " + bmw);
+        daftarWarga.addLast("Susi");
 
-        // int banyakItem = daftarMobil.size();
-        // System.out.println(banyakItem);
+        System.out.println(daftarWarga);
+        System.out.println(daftarWarga.size());
 
-        /**
-         * Looping array list cara 1
-         */
-        // for (int i = 0; i < daftarMobil.size(); i++) {
-        // System.out.println(daftarMobil.get(i));
-        // }
+        daftarWarga.set(3, "Jery");
 
-        /**
-         * Looping array list cara 2
-         */
-        Collections.sort(daftarMobil);
-        for (String mobil : daftarMobil) {
-            System.out.println(mobil);
-        }
+        System.out.println(daftarWarga);
+        System.out.println(daftarWarga.size());
+
+        daftarWarga.removeFirst();
+        System.out.println(daftarWarga);
+        System.out.println(daftarWarga.size());
+
+        daftarWarga.removeLast();
+        System.out.println(daftarWarga);
+        System.out.println(daftarWarga.size());
     }
 }
