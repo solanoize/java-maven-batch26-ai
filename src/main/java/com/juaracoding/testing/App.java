@@ -1,24 +1,31 @@
 package com.juaracoding.testing;
 
-import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+
+import com.juaracoding.testing.model.Cart;
+import com.juaracoding.testing.model.Product;
 
 public class App {
     public static void main(String[] args) {
-        HashMap<String, String> data = new HashMap<>();
+        HashSet<Cart> carts = new HashSet<>();
 
-        data.put("England", "London");
-        data.put("Indonesia", "Jakarta");
-        data.put("Norway", "Oslo");
-        data.put("US", "Washington DC");
+        carts.addAll(List.of(
+                new Cart(new Product(1, "P01", 20000, 10, 10), 2),
+                new Cart(new Product(2, "P02", 5400, 0, 20), 3),
+                new Cart(new Product(3, "P03", 145000, 50, 80), 1)));
 
-        System.out.println(data);
-        System.out.println(data.get("England"));
-        System.out.println(data.values());
-        System.out.println(data.keySet());
-        System.out.println("===========================");
-
-        for (String key : data.keySet()) {
-            System.out.printf("Ibukota %s adalah %s\n", key, data.get(key));
+        double total = 0;
+        for (Cart cart : carts) {
+            System.out.println("Nama Product = " + cart.getProduct().getName());
+            System.out.println("Harga product = " + cart.getProduct().getPrice());
+            System.out.println("Qty = " + cart.getQty());
+            System.out.println("Discount = " + cart.getProduct().getDiscount());
+            System.out.println("Subtotal = " + cart.getSubtotal());
+            System.out.println("  ");
+            total += cart.getSubtotal();
         }
+
+        System.out.println("Total yang harus di bayar = " + total);
     }
 }
